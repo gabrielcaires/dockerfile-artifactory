@@ -1,4 +1,4 @@
-FROM tomcat:7-jre7
+FROM tomcat:8-jre8
 
 MAINTAINER Matthias Grüter <matthias@grueter.name>
 
@@ -8,7 +8,6 @@ ENV ARTIFACTORY_SHA1 245aeb7b2d77830462067d5a19c3bd32ae014ddf
 
 # Disable Tomcat's manager application.
 RUN rm -rf webapps/*
-
 # Redirect URL from / to artifactory/ using UrlRewriteFilter
 COPY urlrewrite/WEB-INF/lib/urlrewritefilter.jar /
 COPY urlrewrite/WEB-INF/urlrewrite.xml /
